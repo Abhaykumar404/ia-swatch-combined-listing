@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "f77995678361b6fa34f85c2c1c47c9f8"
-application_url = "https://releases-fine-reports-educational.trycloudflare.com"
+application_url = "https://applied-rely-warning-vista.trycloudflare.com"
 embedded = true
 name = "ia-swatch-combined-listing"
 handle = "ia-swatch-combined-listing"
@@ -23,9 +23,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://releases-fine-reports-educational.trycloudflare.com/auth/callback",
-  "https://releases-fine-reports-educational.trycloudflare.com/auth/shopify/callback",
-  "https://releases-fine-reports-educational.trycloudflare.com/api/auth/callback"
+  "https://applied-rely-warning-vista.trycloudflare.com/auth/callback",
+  "https://applied-rely-warning-vista.trycloudflare.com/auth/shopify/callback",
+  "https://applied-rely-warning-vista.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

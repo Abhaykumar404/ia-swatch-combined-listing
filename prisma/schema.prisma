@@ -13,6 +13,25 @@ datasource db {
   url      = "file:dev.sqlite"
 }
 
+model StoreUser {
+  id                              String    @id @default(auto()) @map("_id") @db.ObjectId
+  shop                            String    @unique
+  shopDomain                      String?
+  name                            String?
+  email                           String?
+  phone                           String?
+  country                         String?
+  numberOfTimesCartDisplayed      Int?
+  billingOn                       DateTime?
+  isSubscritionAccepted           Boolean?  @default(false)
+  totalRevenue                    Float?
+  totalOrdersCountForBillingCycle Int?      @default(0)
+  usagePriceRecordForBillingCycle Json[]
+  recurringPricingSubscriptionId  String?
+  usagePricingSubscriptionId      String?
+  recurringPlanPrice              Float?
+}
+
 model Session {
   id            String    @id
   shop          String
@@ -29,4 +48,22 @@ model Session {
   locale        String?
   collaborator  Boolean?  @default(false)
   emailVerified Boolean?  @default(false)
+}
+
+model Swatch {
+  id                      String   @id @default(auto()) @map("_id") @db.ObjectId
+  shop                    String
+  name                    String   @default("Create swatch")
+  published               Boolean  @default(false)
+  groupName               String?
+  optionName              String?
+  selectedProduct         Json[]
+  status                  String   @default("draft")
+  displayGroup            String   @default("default")
+  productPageStyle        String   @default("standard")
+  productPageImageSource  String   @default("default")
+  collectionPageStyle     String   @default("default")
+  collectionPageImageSource String @default("default")
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
 }

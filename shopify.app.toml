@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "f77995678361b6fa34f85c2c1c47c9f8"
-application_url = "https://applied-rely-warning-vista.trycloudflare.com"
+application_url = "https://pirates-manga-blank-valley.trycloudflare.com"
 embedded = true
 name = "ia-swatch-combined-listing"
 handle = "ia-swatch-combined-listing"
@@ -23,9 +23,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://applied-rely-warning-vista.trycloudflare.com/auth/callback",
-  "https://applied-rely-warning-vista.trycloudflare.com/auth/shopify/callback",
-  "https://applied-rely-warning-vista.trycloudflare.com/api/auth/callback"
+  "https://pirates-manga-blank-valley.trycloudflare.com/auth/callback",
+  "https://pirates-manga-blank-valley.trycloudflare.com/auth/shopify/callback",
+  "https://pirates-manga-blank-valley.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
@@ -34,3 +34,4 @@ embedded = false
 [build]
 dev_store_url = "otaku231.myshopify.com"
 automatically_update_urls_on_dev = true
+include_config_on_deploy = true

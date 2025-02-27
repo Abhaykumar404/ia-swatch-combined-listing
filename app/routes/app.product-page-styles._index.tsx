@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useFetcher, useNavigate } from "@remix-run/react";
+import { useNavigate } from "@remix-run/react";
 
-import { ChatIcon, LockIcon } from "@shopify/polaris-icons";
+// import { ChatIcon, LockIcon } from "@shopify/polaris-icons";
 import {
   Page,
   Layout,
@@ -11,20 +10,14 @@ import {
   Card,
   Button,
   BlockStack,
-  Box,
-  List,
-  Link,
-  InlineStack,
-  Banner,
-  ButtonGroup,
   InlineGrid,
 } from "@shopify/polaris";
-import { TitleBar, useAppBridge } from "@shopify/app-bridge-react";
+// import { TitleBar, useAppBridge } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
-import { SetupGuide } from "app/components/SetupGuide/SetupGuide";
-import { ITEMS } from "app/components/SetupGuide/data";
-import { CustomBanner } from "app/components/Banner/Banner";
-import { data } from "../components/IndexFilters/data";
+// import { SetupGuide } from "app/components/SetupGuide/SetupGuide";
+// import { ITEMS } from "app/components/SetupGuide/data";
+// import { CustomBanner } from "app/components/Banner/Banner";
+// import { data } from "../components/IndexFilters/data";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   await authenticate.admin(request);

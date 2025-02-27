@@ -5,16 +5,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
-// enough when changing adapters.
-// See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
 datasource db {
-  provider = "sqlite"
-  url      = "file:dev.sqlite"
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model StoreUser {
-  id                              String    @id @default(auto()) @map("_id") @db.ObjectId
+  id                              String    @id @default(uuid()) @map("_id")
   shop                            String    @unique
   shopDomain                      String?
   name                            String?
@@ -26,14 +23,15 @@ model StoreUser {
   isSubscritionAccepted           Boolean?  @default(false)
   totalRevenue                    Float?
   totalOrdersCountForBillingCycle Int?      @default(0)
-  usagePriceRecordForBillingCycle Json[]
+  usagePriceRecordForBillingCycle String?  // Store JSON as a string
   recurringPricingSubscriptionId  String?
   usagePricingSubscriptionId      String?
   recurringPlanPrice              Float?
 }
 
 model Session {
-  id            String    @id
+  id            String    @unique
+  mongoDbId     String    @id @default(auto()) @map("_id") @db.ObjectId
   shop          String
   state         String
   isOnline      Boolean   @default(false)
@@ -51,13 +49,13 @@ model Session {
 }
 
 model Swatch {
-  id                      String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                      String   @id @default(uuid()) @map("_id")
   shop                    String
   name                    String   @default("Create swatch")
   published               Boolean  @default(false)
   groupName               String?
   optionName              String?
-  selectedProduct         Json[]
+  selectedProduct         String?  // Store JSON as a string
   status                  String   @default("draft")
   displayGroup            String   @default("default")
   productPageStyle        String   @default("standard")

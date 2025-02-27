@@ -8,18 +8,14 @@ import {
   Page,
   Layout,
   Text,
-  Card,
   Button,
   BlockStack,
   Box,
-  List,
-  Link,
   InlineStack,
-  Banner,
   ButtonGroup,
   InlineGrid,
 } from "@shopify/polaris";
-import { TitleBar, useAppBridge } from "@shopify/app-bridge-react";
+import { useAppBridge } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
 import { SetupGuide } from "../components/SetupGuide/SetupGuide";
 import { ITEMS } from "../components/SetupGuide/data";
@@ -108,24 +104,21 @@ export default function Index() {
   const [items, setItems] = useState(ITEMS);
 
   // Example of step complete handler, adjust for your use case
-  const onStepComplete = async (id) => {
+  const onStepComplete = async (id: any) => {
     try {
-      // API call to update completion state in DB, etc.
-      await new Promise((res) =>
-        setTimeout(() => {
-          res();
-        }, [1000]),
-      );
+      // Simulate API call delay
+      await new Promise<void>((res) => setTimeout(res, 1000));
 
       setItems((prev) =>
         prev.map((item) =>
-          item.id === id ? { ...item, complete: !item.complete } : item,
-        ),
+          item.id === id ? { ...item, complete: !item.complete } : item
+        )
       );
     } catch (e) {
       console.error(e);
     }
   };
+
 
   if (!showGuide)
     return <Button onClick={() => setShowGuide(true)}>Show Setup Guide</Button>;

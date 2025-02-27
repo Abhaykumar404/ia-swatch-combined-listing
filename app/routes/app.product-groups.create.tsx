@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setGroupName,
@@ -52,9 +51,9 @@ export default function CreateProductGroup() {
     productPageImageSource,
     collectionPageStyle,
     collectionPageImageSource,
-  } = useSelector((state) => state.swatch);
+  } = useSelector((state:any) => state.swatch);
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field:any, value:any) => {
     switch (field) {
       case "groupName":
         dispatch(setGroupName(value));
@@ -65,8 +64,8 @@ export default function CreateProductGroup() {
     }
   };
 
-  const getProductItems = (products) => {
-    return products.map((product) => ({
+  const getProductItems = (products:any) => {
+    return products.map((product:any) => ({
       id: product.id,
       thumbnailSrc: product.images?.[0].originalSrc,
       thumbnailAlt: product.images?.[0].altText,
@@ -130,7 +129,7 @@ export default function CreateProductGroup() {
                 {selectedProduct.length > 0 ? (
                   <CustomFilters
                     items={selectedProduct}
-                    setItems={(items) => dispatch(setSelectedProduct(items))}
+                    setItems={(items:any) => dispatch(setSelectedProduct(items))}
                   />
                 ) : (
                   <EmptyState

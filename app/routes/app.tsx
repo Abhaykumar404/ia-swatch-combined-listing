@@ -3,8 +3,6 @@ import { json } from "@remix-run/node";
 import {
   Link,
   Outlet,
-  Route,
-  Routes,
   useLoaderData,
   useRouteError,
 } from "@remix-run/react";
@@ -14,7 +12,7 @@ import { NavMenu } from "@shopify/app-bridge-react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 
 import { authenticate } from "../shopify.server";
-import CreateProductGroup from "./app.product-groups.create";
+// import CreateProductGroup from "./app.product-groups.create";
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 

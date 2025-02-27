@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { initialCreateSwatch } from "../../utils/constant";
 import merge from "lodash/merge";
 
-const createSwatchSlice = createSlice({
-  name: "create-swatch",
+const createCombinedListingSlice = createSlice({
+  name: "create-combined-listing",
   initialState: initialCreateSwatch,
   reducers: {
     setGroupName: (state, action) => {
@@ -52,7 +52,7 @@ const createSwatchSlice = createSlice({
   },
 });
 
-export default createSwatchSlice.reducer;
+export default createCombinedListingSlice.reducer;
 export const {
   setGroupName,
   setOptionName,
@@ -65,4 +65,4 @@ export const {
   setCollectionPageImageSource,
   setWholeState,
   resetUnsavedChanges,
-} = createSwatchSlice.actions;
+} = createCombinedListingSlice.actions;

@@ -1,32 +1,23 @@
-import { useEffect, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useFetcher, useNavigate } from "@remix-run/react";
+import {useNavigate } from "@remix-run/react";
 
-import { ChatIcon, LockIcon } from "@shopify/polaris-icons";
+// import { ChatIcon, LockIcon } from "@shopify/polaris-icons";
 import {
   Page,
   Layout,
   Text,
-  Card,
-  Button,
   BlockStack,
   Box,
-  List,
-  Link,
-  InlineStack,
-  Banner,
-  ButtonGroup,
-  InlineGrid,
   EmptyState,
 } from "@shopify/polaris";
-import { TitleBar, useAppBridge } from "@shopify/app-bridge-react";
+// import { TitleBar, useAppBridge } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
-import { SetupGuide } from "app/components/SetupGuide/SetupGuide";
-import { ITEMS } from "app/components/SetupGuide/data";
-import { CustomBanner } from "app/components/Banner/Banner";
+// import { SetupGuide } from "app/components/SetupGuide/SetupGuide";
+// import { ITEMS } from "app/components/SetupGuide/data";
+// import { CustomBanner } from "app/components/Banner/Banner";
 import { Footer } from "../components/Footer/Footer";
-import EmptyProductGroup from "../../public/assets/icons/empty_productGroup.png";
+// import EmptyProductGroup from "../../public/assets/icons/empty_productGroup.png";
 import { data } from "../components/IndexFilters/data";
 import { IndexFilter } from "../components/IndexFilters/IndexFilters";
 export const loader = async ({ request }: LoaderFunctionArgs) => {
@@ -105,9 +96,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 };
 
 export default function ProductGroups() {
-  const fetcher = useFetcher<typeof action>();
+  // const fetcher = useFetcher<typeof action>();
 
-  const shopify = useAppBridge();
+  // const shopify = useAppBridge();
   const navigate = useNavigate();
 
   return data.length > 0 ? (
